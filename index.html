@@ -2,7 +2,7 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <title>4橋牌隊制賽網站</title>
+  <title>5橋牌隊制賽網站</title>
 </head>
 <body>
   <h1>橋牌隊制賽網站</h1>
@@ -40,37 +40,28 @@
     scoreToIMP,
     impToVP
   }from './ToIMP.js';
+    import{
+    showNumber
+  }from './Show.js';
     function calculate() {
-
       let input = parseInt(document.getElementById("numberInput").value) || 0;
-
       let suit = document.getElementById("mySelect").value;
-
       let isVul = document.getElementById("bodyprice").checked;
-
       let doubles = parseInt(document.getElementById("doubles").value) || 0;
-
       let resultType = document.getElementById("resultMD").value;
-
       let result = parseInt(document.getElementById("Gresult").value) || 0;
       if (!suit || input <= 0) {
-
         document.getElementById("output").innerText = "請輸入正確合約";
-
         return;
-
       }
-      let a=counttotalpoints(input,suit,doubles,resultType,result,isVul)
+      let a=counttotalpoints(input,suit,doubles,resultType,result,isVul);
       let b=scoreToIMP(a);
-document.getElementById("output2").innerText = `${a}分，${b}imp`
+      let c=showNumber(input,suit,doubles,resultType,result,isVul);
+document.getElementById("output2").innerText = `${c}為${a}分，${b}imp`
     }
-
     // 讓 HTML onclick 可以用
-
     window.calculate = calculate;
-
   </script>
-
 </body>
 
 </html
