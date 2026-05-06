@@ -110,9 +110,9 @@
 
       // 👉 Make
 
-      let roundP = countroundP(suit, input, doubles);
+      let roundP = countroundP(input, suit, doubles);
 
-      let bonus = countprizepoints(input, isVul, suit, doubles);
+      let bonus = countprizepoints(input, suit, doubles,isVul);
 
       let over = countextra(suit, Math.max(0, result - input), doubles, isVul);
 
