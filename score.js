@@ -75,3 +75,11 @@ export function countlosspoint(double,loss,vul){
     }
     return bonus;
   }
+export function counttotalpoints(num,select,double,MD,result,vul){
+    if(MD=="D"){
+        return -countlosspoint(double,result,vul);
+    }
+    if(MD=="M"){
+        return countprizepoints(num,select,double,vul)+countroundP(num,select,double)+countextra(select,(result-num),double,vul);
+    }
+}
