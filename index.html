@@ -1,17 +1,135 @@
-<script type="module">
+<!DOCTYPE html>
 
-import { countroundP, countprizepoints } from './score.js';
+<html lang="zh-TW">
 
-function test(){
+<head>
 
-  let score = countroundP("c", 4, 1);
+  <meta charset="UTF-8">
 
-  console.log(score);
+  <title>橋牌對治賽網站</title>
 
-}
+</head>
 
-window.test = test;
+<body>
 
-</script>
+  <h1>橋牌對峙賽網站</h1>
 
-<button onclick="test()">測試</button>
+  <input type="text" id="numberInput" placeholder="請輸入合約線位">
+
+  <select id="mySelect">
+
+    <option value="">--請選擇--</option>
+
+    <option value="a">club</option>
+
+    <option value="b">diamond</option>
+
+    <option value="c">heart</option>
+
+    <option value="d">spade</option>
+
+    <option value="e">NT</option>
+
+  </select>
+
+  身價 <input type="checkbox" id="bodyprice"><br>
+
+  賭背 <input type="text" id="doubles" placeholder="請輸入doubles"><br>
+
+  結果
+
+  <select id="resultMD">
+
+    <option value="">--請選擇--</option>
+
+    <option value="M">make</option>
+
+    <option value="D">down</option>
+
+  </select><br>
+
+  <input type="text" id="Gresult" placeholder="結果是多少">
+
+  <br><br>
+
+  <button onclick="calculate()">計算分數</button>
+
+  <p id="output"></p>
+
+  <!-- 🔥 重點：module -->
+
+  <script type="module">
+
+    import {
+
+      countroundP,
+
+      countprizepoints,
+
+      countextra,
+
+      countlosspoint
+
+    } from './score.js';
+
+    function calculate() {
+
+      let input = parseInt(document.getElementById("numberInput").value) || 0;
+
+      let suit = document.getElementById("mySelect").value;
+
+      let isVul = document.getElementById("bodyprice").checked;
+
+      let doubles = parseInt(document.getElementById("doubles").value) || 0;
+
+      let resultType = document.getElementById("resultMD").value;
+
+      let result = parseInt(document.getElementById("Gresult").value) || 0;
+
+      if (!suit || input <= 0) {
+
+        document.getElementById("output").innerText = "請輸入正確合約";
+
+        return;
+
+      }
+
+      // 👉 Down
+
+      if (resultType === "D") {
+
+        let loss = countlosspoint(doubles, result, isVul);
+
+        document.getElementById("output").innerText =
+
+          `倒 ${result} 墩，失去 ${loss} 分`;
+
+        return;
+
+      }
+
+      // 👉 Make
+
+      let roundP = countroundP(suit, input, doubles);
+
+      let bonus = countprizepoints(input, isVul, suit, doubles);
+
+      let over = countextra(suit, Math.max(0, result - input), doubles, isVul);
+
+      let total = roundP + bonus + over;
+
+      document.getElementById("output").innerText =
+
+        `基礎分 ${roundP}，獎分 ${bonus}，超墩 ${over}，總分 ${total}`;
+
+    }
+
+    // 讓 HTML onclick 可以用
+
+    window.calculate = calculate;
+
+  </script>
+
+</body>
+
+</html
