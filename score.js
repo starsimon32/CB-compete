@@ -47,7 +47,7 @@ export function countlosspoint(double,loss,vul){
       return a;
     }
     if(vul){
-      return  double*100*loss*2-double*100;
+      return  300*double*loss-(100*double);
       
     }
     if(vul==false&& loss<=2){
