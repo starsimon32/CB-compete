@@ -1,4 +1,4 @@
-export function countroundP(select,con,double){
+export function countroundP(con,select,double){
     let input = parseInt(con);    
     let roundP=0;
     let doubles =parseInt(double)||0;
