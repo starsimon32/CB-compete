@@ -4,9 +4,7 @@ export function showNumber(input,suit,doubles,MD,Gresult,isChecked) {
     b: "D",
     c: "H",
     d: "S",
-
     e: "NT"
-
   }[suit]
     let text2="結果：";
     if (isChecked) {
@@ -20,7 +18,7 @@ export function showNumber(input,suit,doubles,MD,Gresult,isChecked) {
   }
   if(MD=="M"){
     if(Gresult==input){
-      text2+="=";
+      text2+=`=`;
     }else{
       text2+=`+${Gresult-input}`;
     }
