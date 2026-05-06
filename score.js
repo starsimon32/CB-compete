@@ -30,8 +30,8 @@ export function countprizepoints(input,select,doubles,isChecked){
       else bonus+=800;
     }
   else if(roundP>=100){
-    if(isChecked) bonus+=550;
-      else bonus+=350;
+    if(isChecked) bonus+=500;
+      else bonus+=300;
   }
   else bonus+=50;
 return bonus;
