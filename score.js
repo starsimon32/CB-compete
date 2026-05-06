@@ -30,8 +30,8 @@ export function countprizepoints(input,select,doubles,isChecked){
       else bonus+=800;
     }
   else if(roundP>=100){
-    if(isChecked) bonus+=500;
-      else bonus+=300;
+    if(isChecked) bonus+=550;
+      else bonus+=350;
   }
   else bonus+=50;
 return bonus;
@@ -53,7 +53,7 @@ export function countlosspoint(double,loss,vul){
     if(vul==false&& loss<=2){
       return -250*double - 300*loss + 450*double*loss + 300;
     }
-    return countlosspoint(double,loss-2,true);
+    return countlosspoint(double,loss-1,true);
   }
  export function countextra(type,over,double,vul){
     let bonus=0;
