@@ -27,15 +27,13 @@
   <br><br>
   <button onclick="calculate()">計算分數</button>
   <p id="output2"></p>
-  <table border="1">
+  <table border="1" id="table1">
   <tr>
-    <th>合約</th>
-    <th>結果</th>
+    <th>合約和結果</th>
     <th>分數</th>
   </tr>
   <tr>
-    <td>4♥</td>
-    <td>+1</td>
+    <td>4♥+1</td>
     <td>650</td>
   </tr>
   </table>
@@ -74,7 +72,14 @@
       let b=scoreToIMP(a);
       let c=showNumber(input,suit,doubles,resultType,result,isVul);
 document.getElementById("output2").innerText = `${c}為${a}分，${b}imp`
+      addRow(c, a,table1);
     }
+function addRow(CandR, score,tableID) {
+  let table =tableID;
+  let row = table.insertRow();
+  row.insertCell(0).innerText = CandR;
+  row.insertCell(1).innerText = score;
+}
     // 讓 HTML onclick 可以用
     window.calculate = calculate;
   </script>
