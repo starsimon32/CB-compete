@@ -6,7 +6,7 @@
 
   <meta charset="UTF-8">
 
-  <title>橋牌對制賽網站</title>
+  <title>橋牌對制賽網站2</title>
 
 </head>
 
@@ -55,6 +55,7 @@
   <button onclick="calculate()">計算分數</button>
 
   <p id="output"></p>
+  <p id="output2"></p>
 
   <!-- 🔥 重點：module -->
 
@@ -68,7 +69,8 @@
 
       countextra,
 
-      countlosspoint
+      countlosspoint,
+      counttotalpoints
 
     } from './score.js';
 
@@ -85,7 +87,6 @@
       let resultType = document.getElementById("resultMD").value;
 
       let result = parseInt(document.getElementById("Gresult").value) || 0;
-
       if (!suit || input <= 0) {
 
         document.getElementById("output").innerText = "請輸入正確合約";
@@ -93,6 +94,9 @@
         return;
 
       }
+      let a=counttotalpoints(input,suit,doubles,resultType,result,isVul)
+document.getElementById("output2").innerText = a;
+      
 
       // 👉 Down
 
