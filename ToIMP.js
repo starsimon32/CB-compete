@@ -54,3 +54,14 @@ export function scoreToIMP(diff){
   return 24;
 
 }
+export function impToVP(imp, boards){
+
+  let vp = 10 + (imp / (5 * Math.sqrt(boards))) * 10;
+
+  if(vp > 20) vp = 20;
+
+  if(vp < 0) vp = 0;
+
+  return vp.toFixed(2);
+
+}
