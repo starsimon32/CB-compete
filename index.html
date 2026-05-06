@@ -2,7 +2,7 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <title>5橋牌隊制賽網站</title>
+  <title>6橋牌隊制賽網站</title>
 </head>
 <body>
   <h1>橋牌隊制賽網站</h1>
@@ -51,9 +51,13 @@
       let resultType = document.getElementById("resultMD").value;
       let result = parseInt(document.getElementById("Gresult").value) || 0;
       if (!suit || input <= 0) {
-        document.getElementById("output").innerText = "請輸入正確合約";
+        document.getElementById("output2").innerText = "請輸入正確合約";
         return;
       }
+      if (!resultType) {
+  document.getElementById("output2").innerText = "請選擇結果類型";
+  return; 
+}
       let a=counttotalpoints(input,suit,doubles,resultType,result,isVul);
       let b=scoreToIMP(a);
       let c=showNumber(input,suit,doubles,resultType,result,isVul);
@@ -64,4 +68,4 @@ document.getElementById("output2").innerText = `${c}為${a}分，${b}imp`
   </script>
 </body>
 
-</html
+</html>
