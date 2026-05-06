@@ -1,13 +1,9 @@
 export function showNumber(input,suit,doubles,MD,Gresult,isChecked) {
   let suitText = {
-
-    a: "club",
-
-    b: "diamond",
-
-    c: "heart",
-
-    d: "spade",
+    a: "C",
+    b: "D",
+    c: "H",
+    d: "S",
 
     e: "NT"
 
@@ -23,7 +19,12 @@ export function showNumber(input,suit,doubles,MD,Gresult,isChecked) {
     text2+="X";
   }
   if(MD=="M"){
-    text2+=`+${Gresult-input}`;
+    if(Gresult==input){
+      text2+="=";
+    }else{
+      text2+=`+${Gresult-input}`;
+    }
+    
   }
   else{
     text2+=`-${Gresult}`;
