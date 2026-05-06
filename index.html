@@ -2,7 +2,7 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <title>8橋牌隊制賽網站</title>
+  <title>9橋牌隊制賽網站</title>
 </head>
 <body>
   <h1>橋牌隊制賽網站</h1>
@@ -26,7 +26,7 @@
   <input type="text" id="Gresult" placeholder="結果是多少">
   <br><br>
   <button onclick="calculate()">計算分數</button>
-  <button onclick="createTable()">創造一個table</button>
+  <button onclick="createTabletest()">創造一個table</button>
   <p id="output2"></p>
   <table border="1" id="table1">
   <tr>
@@ -81,6 +81,9 @@ function addRow(CandR, score,tableID) {
   row.insertCell(0).innerText = CandR;
   row.insertCell(1).innerText = score;
 }
+   function createTabletest(){
+     createTable(10, 10, tableidtest);
+   }
     function createTable(rows, cols, tableId) {
 
   // 1️⃣ 建立 table 元素
