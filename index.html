@@ -1,77 +1,40 @@
 <!DOCTYPE html>
-
 <html lang="zh-TW">
-
 <head>
-
   <meta charset="UTF-8">
-
-  <title>3橋牌隊制賽網站</title>
-
+  <title>4橋牌隊制賽網站</title>
 </head>
-
 <body>
-
   <h1>橋牌隊制賽網站</h1>
-
   <input type="text" id="numberInput" placeholder="請輸入合約線位">
-
   <select id="mySelect">
-
     <option value="">--請選擇--</option>
-
     <option value="a">club</option>
-
     <option value="b">diamond</option>
-
     <option value="c">heart</option>
-
     <option value="d">spade</option>
-
     <option value="e">NT</option>
-
   </select>
-
   身價 <input type="checkbox" id="bodyprice"><br>
-
   賭背 <input type="text" id="doubles" placeholder="請輸入doubles"><br>
-
   結果
-
   <select id="resultMD">
-
     <option value="">--請選擇--</option>
-
     <option value="M">make</option>
-
     <option value="D">down</option>
-
   </select><br>
-
   <input type="text" id="Gresult" placeholder="結果是多少">
-
   <br><br>
-
   <button onclick="calculate()">計算分數</button>
-
-  <p id="output"></p>
   <p id="output2"></p>
-
   <!-- 🔥 重點：module -->
-
   <script type="module">
-
     import {
-
       countroundP,
-
       countprizepoints,
-
       countextra,
-
       countlosspoint,
       counttotalpoints
-
     } from './score.js';
   import{
     scoreToIMP,
@@ -99,37 +62,7 @@
       }
       let a=counttotalpoints(input,suit,doubles,resultType,result,isVul)
       let b=scoreToIMP(a);
-document.getElementById("output2").innerText = `${a}分，${b}imp`;
-      
-
-      // 👉 Down
-
-      if (resultType === "D") {
-
-        let loss = countlosspoint(doubles, result, isVul);
-
-        document.getElementById("output").innerText =
-
-          `倒 ${result} 墩，失去 ${loss} 分`;
-
-        return;
-
-      }
-
-      // 👉 Make
-
-      let roundP = countroundP(input, suit, doubles);
-
-      let bonus = countprizepoints(input, suit, doubles,isVul);
-
-      let over = countextra(suit, Math.max(0, result - input), doubles, isVul);
-
-      let total = roundP + bonus + over;
-
-      document.getElementById("output").innerText =
-
-        `基礎分 ${roundP}，獎分 ${bonus}，超墩 ${over}，總分 ${total}`;
-
+document.getElementById("output2").innerText = `${a}分，${b}imp`
     }
 
     // 讓 HTML onclick 可以用
