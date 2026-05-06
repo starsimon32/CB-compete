@@ -77,8 +77,10 @@
       let a=counttotalpoints(input,suit,doubles,resultType,result,isVul);
       let b=scoreToIMP(a);
       let c=showNumber(input,suit,doubles,resultType,result,isVul);
-document.getElementById("output2").innerText = `${c}為${a}分，${b}imp`
-      addRow(c, a,table1);
+document.getElementById("output2").innerText = `${c}為${a}分，${b}imp`;
+      let table = document.getElementById("table1");
+addRow(c, a, table);
+
     }
 function addRow(CandR, score,tableID) {
   let table =tableID;
