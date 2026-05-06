@@ -1,4 +1,4 @@
-<script type="module">
+
     import {
       countroundP,
       countprizepoints,
@@ -49,7 +49,7 @@ export function initialTable(rounds, tableId) {
 
     let vul = getVul(i);
 
-    row.insertCell(1).innerText = formatVul(vul);
+    row.insertCell(1).innerText = vul;
 
     // 我們桌
 
