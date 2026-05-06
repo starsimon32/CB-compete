@@ -2,7 +2,7 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <title>7橋牌隊制賽網站</title>
+  <title>8橋牌隊制賽網站</title>
 </head>
 <body>
   <h1>橋牌隊制賽網站</h1>
@@ -26,6 +26,7 @@
   <input type="text" id="Gresult" placeholder="結果是多少">
   <br><br>
   <button onclick="calculate()">計算分數</button>
+  <button onclick="createTable()">創造一個table</button>
   <p id="output2"></p>
   <table border="1" id="table1">
   <tr>
@@ -79,6 +80,39 @@ function addRow(CandR, score,tableID) {
   let row = table.insertRow();
   row.insertCell(0).innerText = CandR;
   row.insertCell(1).innerText = score;
+}
+    function createTable(rows, cols, tableId) {
+
+  // 1️⃣ 建立 table 元素
+
+  let table = document.createElement("table");
+
+  // 2️⃣ 設定 id（重點）
+
+  table.id = tableId;
+
+  // 3️⃣ 加邊框（可選）
+
+  table.border = "1";
+
+  // 4️⃣ 建立列與格
+
+  for (let i = 0; i < rows; i++) {
+
+    let row = table.insertRow();
+
+    for (let j = 0; j < cols; j++) {
+
+      row.insertCell(j).innerText = "";
+
+    }
+
+  }
+
+  // 5️⃣ 把 table 加到網頁上（body 或某個 div）
+
+  document.body.appendChild(table);
+
 }
     // 讓 HTML onclick 可以用
     window.calculate = calculate;
