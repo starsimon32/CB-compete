@@ -1,31 +1,17 @@
-<!DOCTYPE html>
+<script type="module">
 
-<html>
+import { countroundP, countprizepoints } from './score.js';
 
-<head>
+function test(){
 
-  <title>我的橋牌個網站</title>
+  let score = countroundP("c", 4, 1);
 
-</head>
+  console.log(score);
 
-<body>
+}
 
-  <h1>Hello World!</h1>
+window.test = test;
 
-  <p>這是我用 GitHub 做的第一個網站 🎉</p>
+</script>
 
-  <button onclick="sayHi()">點我</button>
-
-  <script>
-
-    function sayHi() {
-
-      alert("你好！程式成功運作了！");
-
-    }
-
-  </script>
-
-</body>
-
-</html>
+<button onclick="test()">測試</button>
