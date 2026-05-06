@@ -6,13 +6,13 @@
 
   <meta charset="UTF-8">
 
-  <title>橋牌對制賽網站2</title>
+  <title>3橋牌對制賽網站</title>
 
 </head>
 
 <body>
 
-  <h1>橋牌對峙賽網站</h1>
+  <h1>橋牌隊制賽網站</h1>
 
   <input type="text" id="numberInput" placeholder="請輸入合約線位">
 
@@ -73,7 +73,9 @@
       counttotalpoints
 
     } from './score.js';
-
+  import{
+    scoreToIMP
+  }from './ToIMP.js';
     function calculate() {
 
       let input = parseInt(document.getElementById("numberInput").value) || 0;
@@ -95,7 +97,8 @@
 
       }
       let a=counttotalpoints(input,suit,doubles,resultType,result,isVul)
-document.getElementById("output2").innerText = a;
+      let b=scoreToIMP(a);
+document.getElementById("output2").innerText = `${a}分，{b}imp`;
       
 
       // 👉 Down
