@@ -18,7 +18,7 @@ export function countroundP(con,select,double){
     return roundP*(2**doubles);
   }
 export function countprizepoints(input,select,doubles,isChecked){
-    let roundP=countroundP(select,input,doubles);
+    let roundP=countroundP(input,select,doubles);
   
     let bonus=50*(parseInt( document.getElementById("doubles").value)||0);
     if(input>=7){
