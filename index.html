@@ -27,6 +27,7 @@
   <br><br>
   <button onclick="calculate()">計算分數</button>
   <button onclick="createTabletest()">創造一個table</button>
+   <button onclick="initialtablehere()">初始個table</button>
   <p id="output2"></p>
   <table border="1" id="table1">
   <tr>
@@ -54,6 +55,10 @@
     import{
     showNumber
   }from './Show.js';
+    import{
+    initialTable
+  }from './TableFunctions.js';
+    
     function calculate() {
       let input = parseInt(document.getElementById("numberInput").value) || 0;
       let suit = document.getElementById("mySelect").value;
@@ -95,8 +100,11 @@ table.border = "1";
     }
   }
   document.body.appendChild(table);
+  
 }
-    
+  function initialtablehere(){
+    initialTable(tableId,16);
+  }
     // 讓 HTML onclick 可以用
     window.calculate = calculate;
     window.createTabletest = createTabletest;
