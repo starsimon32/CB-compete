@@ -25,7 +25,9 @@
   </select><br>
   <input type="text" id="Gresult" placeholder="結果是多少">
   <br><br>
-  <button onclick="calculate()">計算分數</button>
+  <button onclick="calculate()">計算分數</button><br>
+  輸入牌數<input type="text" id="rounds" placeholder="請輸入牌數">
+  輸入起始第幾排<input type="text" id="startround" placeholder="起始第幾個">
 <button onclick="setchart()">設定牌數</button>
   <p id="output2"></p>
   <table border="1" id="table1">
@@ -68,7 +70,8 @@
     showNumber
   }from './Show.js';
     import{
-      setTableCell}from './TableFunctions.js';
+      setTableCell,
+    setblanktable}from './TableFunctions.js';
     import{
       getDealer,
       getVul}from './GetVul.js';
@@ -94,6 +97,12 @@ document.getElementById("output2").innerText = `${c}為${a}分，${b}imp`;
       let table = document.getElementById("table1");
 addRow(c, a, table);
 
+    }
+    function setchart(){
+      let rounds = parseInt(document.getElementById("rounds").value) || 0;
+      let start = parseInt(document.getElementById("startround").value) || 0;
+      let table = document.getElementById("table2");
+      setblanktable(table,rounds,start);
     }
 function addRow(CandR, score,tableID) {
   let table =tableID;
