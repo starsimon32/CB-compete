@@ -16,3 +16,14 @@ export function getVul(board) {
   return vulTable[b - 1];
 
 }
+export function getDealer(round){
+  let a=round%4;
+  if(a==1)
+  return "N";
+  if(a==2)
+    return "E";
+  if(a==3)
+    return "S";
+  if(a==0)
+    return "W";
+}
