@@ -2,7 +2,7 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <title>16橋牌隊制賽網站</title>
+  <title>17橋牌隊制賽網站</title>
 </head>
 <body>
   <h1>橋牌隊制賽網站</h1>
@@ -87,24 +87,7 @@ function addRow(CandR, score,tableID) {
   row.insertCell(0).innerText = CandR;
   row.insertCell(1).innerText = score;
 }
-   function createTabletest(){
-     createTable(10, 10, "tableidtest");
-   }
- function createTable(rows, cols, tableId) {
-  let table = document.createElement("table");
- table.id = tableId;
-table.border = "1";
-   
-  for (let i = 0; i < rows; i++) {
-    let row = table.insertRow();
-    for (let j = 0; j < cols; j++) {
-      row.insertCell(j).innerText = "";
-    }
-  }
-   
-  document.body.appendChild(table);
-  
-}
+
 
     // 讓 HTML onclick 可以用
     window.calculate = calculate;
