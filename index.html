@@ -41,9 +41,13 @@
    <table border="1" id="table2">
   <tr>
     <th>第幾輪</th>
+    <th>開叫者</th>
     <th>身價</th>
      <th>我們結果</th>
      <th>他們結果</th>
+    <th>差值</th>
+    <th>imp(我們）</th>
+    <th>imp（他們）</th>
     
   </tr>
   </table>
@@ -65,7 +69,9 @@
   }from './Show.js';
     import{
       setTableCell}from './TableFunctions.js';
-    
+    import{
+      getDealer,
+      getVul}from './GetVul.js';
     function calculate() {
       let input = parseInt(document.getElementById("numberInput").value) || 0;
       let suit = document.getElementById("mySelect").value;
