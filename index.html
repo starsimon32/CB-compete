@@ -6,6 +6,7 @@
 </head>
 <body>
   <h1>橋牌隊制賽網站</h1>
+ 給你看看合約分數計算：<br>
   <input type="text" id="numberInput" placeholder="請輸入合約線位">
   <select id="mySelect">
     <option value="">--請選擇--</option>
@@ -26,10 +27,7 @@
   <input type="text" id="Gresult" placeholder="結果是多少">
   <br><br>
   <button onclick="calculate()">計算分數</button><br>
-  輸入牌數<input type="text" id="rounds" placeholder="請輸入牌數">
-  輸入起始第幾排<input type="text" id="startround" placeholder="起始第幾個">
-<button onclick="setchart()">設定牌數</button>
-  <p id="output2"></p>
+   <p id="output2"></p>
   <table border="1" id="table1">
   <tr>
     <th>合約和結果</th>
@@ -39,7 +37,12 @@
     <td>4♥+1</td>
     <td>650</td>
   </tr>
-  </table>
+  </table><br><br>
+  現在來打牌吧~
+  輸入牌數<input type="text" id="rounds" placeholder="請輸入牌數">
+  輸入起始第幾排<input type="text" id="startround" placeholder="起始第幾個">
+<button onclick="setchart()">設定牌數</button>
+ 
    <table border="1" id="table2">
   <tr>
     <th>第幾輪</th>
