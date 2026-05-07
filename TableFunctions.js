@@ -15,7 +15,7 @@ export function setTableCell(tableId, row, col, text) {
   table.rows[row].cells[col].innerText = text;
 }
 export function setblanktable(tableID,rounds,start){
-    let table =tableID;
+    let table =document.getElementById(tableId);
     for(let i=1;i<=rounds;i++){
   let row = table.insertRow();
         let a=i+start-1;
