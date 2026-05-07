@@ -2,7 +2,7 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <title>12橋牌隊制賽網站</title>
+  <title>13橋牌隊制賽網站</title>
 </head>
 <body>
   <h1>橋牌隊制賽網站</h1>
@@ -101,6 +101,14 @@ table.border = "1";
       row.insertCell(j).innerText = "";
     }
   }
+   let header1 = table.insertRow();
+   header1.insertCell(0).innerText = "牌";
+  header1.insertCell(1).innerText = "身價";
+  header1.insertCell(2).innerText = "我們桌";
+  header1.insertCell(3).innerText = "他們桌";
+  header1.insertCell(4).innerText = "我們IMP";
+  header1.insertCell(5).innerText = "他們IMP";
+  header1.insertCell(6).innerText = "差值";
   document.body.appendChild(table);
   
 }
