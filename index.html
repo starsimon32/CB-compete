@@ -2,7 +2,7 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <title>14橋牌隊制賽網站</title>
+  <title>15橋牌隊制賽網站</title>
 </head>
 <body>
   <h1>橋牌隊制賽網站</h1>
@@ -94,14 +94,7 @@ function addRow(CandR, score,tableID) {
   let table = document.createElement("table");
  table.id = tableId;
 table.border = "1";
-   let header1 = table.insertRow();
-   header1.insertCell(0).innerText = "牌";
-  header1.insertCell(1).innerText = "身價";
-  header1.insertCell(2).innerText = "我們桌";
-  header1.insertCell(3).innerText = "他們桌";
-  header1.insertCell(4).innerText = "我們IMP";
-  header1.insertCell(5).innerText = "他們IMP";
-  header1.insertCell(6).innerText = "差值";
+   
   for (let i = 0; i < rows; i++) {
     let row = table.insertRow();
     for (let j = 0; j < cols; j++) {
