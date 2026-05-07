@@ -2,7 +2,7 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <title>13橋牌隊制賽網站</title>
+  <title>14橋牌隊制賽網站</title>
 </head>
 <body>
   <h1>橋牌隊制賽網站</h1>
@@ -27,7 +27,6 @@
   <br><br>
   <button onclick="calculate()">計算分數</button>
   <button onclick="createTabletest()">創造一個table</button>
-   <button onclick="initialtablehere()">初始個table</button>
   <p id="output2"></p>
   <table border="1" id="table1">
   <tr>
@@ -95,12 +94,6 @@ function addRow(CandR, score,tableID) {
   let table = document.createElement("table");
  table.id = tableId;
 table.border = "1";
-  for (let i = 0; i < rows; i++) {
-    let row = table.insertRow();
-    for (let j = 0; j < cols; j++) {
-      row.insertCell(j).innerText = "";
-    }
-  }
    let header1 = table.insertRow();
    header1.insertCell(0).innerText = "牌";
   header1.insertCell(1).innerText = "身價";
@@ -109,12 +102,17 @@ table.border = "1";
   header1.insertCell(4).innerText = "我們IMP";
   header1.insertCell(5).innerText = "他們IMP";
   header1.insertCell(6).innerText = "差值";
+  for (let i = 0; i < rows; i++) {
+    let row = table.insertRow();
+    for (let j = 0; j < cols; j++) {
+      row.insertCell(j).innerText = "";
+    }
+  }
+   
   document.body.appendChild(table);
   
 }
-  function initialtablehere(){
-    initialTable(16,"tableidtest");
-  }
+
     // 讓 HTML onclick 可以用
     window.calculate = calculate;
     window.createTabletest = createTabletest;
